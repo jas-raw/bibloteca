@@ -22,9 +22,8 @@ function deleted(modelo: any, book: any, sequelize: any, log: any){
                                 id: loan_id
                             }
                         })
-                        console.log(loan_in_db, ok_loan)
                         if(ok_loan[0] === 1){
-                            data = loan_in_db
+                            data = {data: "El libro fue devuelto"}
                             await t.commit()
                         }else{
                             throw new Error("Error al anular el prestamo")

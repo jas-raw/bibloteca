@@ -7,7 +7,7 @@ export class UserController{
         const user = req.body
         let data = await create_user(user)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(CREATED).send(data)
     }
@@ -23,7 +23,7 @@ export class UserController{
         const user = req.body
         let data = await update_user(id, user)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(SUCCESSFUL).send(data)
     }
@@ -32,7 +32,7 @@ export class UserController{
         const { id } = req.query
         let data = await delete_user(id)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.sendStatus(NO_CONTENT)
     }

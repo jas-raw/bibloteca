@@ -273,7 +273,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/v1/loans/read?title=El principito&is_book=true",
+							"raw": "http://localhost:8000/api/v1/loans/read",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -284,21 +284,6 @@
 								"v1",
 								"loans",
 								"read"
-							],
-							"query": [
-								{
-									"key": "title",
-									"value": "El principito"
-								},
-								{
-									"key": "is_book",
-									"value": "true"
-								},
-								{
-									"key": "username",
-									"value": "johnDoe",
-									"disabled": true
-								}
 							]
 						}
 					},

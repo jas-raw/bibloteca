@@ -7,15 +7,13 @@ export class LoanController{
         const loan = req.body
         let data = await create_loan(loan)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(CREATED).send(data)
     }
 
     async reads(req: any, res: any){
-        const { is_book } = req.query
-        const filter = req.filter
-        let data = await read_loan(is_book === "false" ? false : true, filter)
+        let data = await read_loan()
         return res.status(SUCCESSFUL).send(data)
     }
 
@@ -27,7 +25,7 @@ export class LoanController{
         const { id } = req.query
         let data = await delete_loan(id)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(SUCCESSFUL).send(data)
     }

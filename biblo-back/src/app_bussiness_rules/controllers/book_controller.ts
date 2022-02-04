@@ -7,7 +7,7 @@ export class BookController{
         const book = req.body
         let data = await create_book(book)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(CREATED).send(data)
     }
@@ -23,7 +23,7 @@ export class BookController{
         const book = req.body
         let data = await update_book(id, book)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.status(SUCCESSFUL).send(data)
     }
@@ -32,7 +32,7 @@ export class BookController{
         const { id } = req.query
         let data = await delete_book(id)
         if(data.error){
-            return res.status(SERVERERROR).send(data)
+            return res.status(SUCCESSFUL).send(data)
         }
         return res.sendStatus(NO_CONTENT)
     }
