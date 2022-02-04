@@ -1,0 +1,5 @@
+export const DEVOLUCIONES_PATH = "/devoluciones"
+export const USUARIOS_PATH = "/usuarios"
+export const LIBROS_PATH = "/libros"
+export const PRESTAMOS_PATH = "/prestamos"
+export const BACK_URL: string = process.env.REACT_APP_BACK_URL || "http://localhost:8080/api/v1"
