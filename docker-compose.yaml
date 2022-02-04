@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres
+    container_name: postgresdb
+    restart: always
+    user: "1000:50"
+    volumes:
+      - ./Data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: biblioteca
+    ports:
+      - 5432:5432
+    networks: 
+      - dev_dbs
+
+  biblo-back:
+    build:
+      context: ./biblo-back
+      dockerfile: ./Dockerfile
+    container_name: biblo-back
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+        - 8080:8080
+    networks: 
+      - dev_dbs
+
+  biblo-front:
+    build:
+      context: ./biblo-front
+      dockerfile: ./Dockerfile
+    container_name: biblo-front
+    restart: always
+    ports:
+        - 3000:80
+    networks: 
+      - dev_dbs
+
+networks: 
+  dev_dbs:
+    driver: bridge

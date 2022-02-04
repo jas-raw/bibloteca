@@ -2,7 +2,7 @@ import dotenv from "dotenv"
 
 dotenv.config();
 
-export const PORT = parseInt(process.env.PORT || "8000")
+export const PORT = parseInt(process.env.PORT || "8080")
 
 export const DB_URL = process.env.DB_URL || "localhost"
 export const DB_PORT = parseInt(process.env.DB_PORT || "5432")
