@@ -35,6 +35,6 @@ Tenga en cuenta que es necesario:
 
 npm install && npm run start
 
-### ### Para ejecutar el front, simplemente abra una terminal de comandos en la carpeta biblo-back y ejecute:
+### ### Para ejecutar el back, simplemente abra una terminal de comandos en la carpeta biblo-back y ejecute:
 
 npm install && npm run dev
